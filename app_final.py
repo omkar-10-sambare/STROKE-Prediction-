@@ -7,6 +7,7 @@ model = joblib.load('model.joblib')
 LE = joblib.load('LE.joblib')
 ss = joblib.load('Scaling.joblib')
 
+st.title("Stroke Predictor for the patients !")
 
 
 gender = st.selectbox("gender", ["Male","Female"])
