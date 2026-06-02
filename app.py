@@ -2,28 +2,28 @@ import streamlit as st
 
 
 Gender = st.selectbox("gender", ["Male","Female"])
-input_df = pd.DataFrame([[Gender]],columns ="Gender")
+input_df = pd.DataFrame([[Gender]],columns =["Gender"])
 Encoded_Gender = LE.transform(input_df)
 gender_value = Encoded_Gender[0][0]
 
 Marital_Status = st.selectbox("ever_married", ["Yes","No"])
-input_df = pd.DataFrame([[Marital_Status]],columns ="Marital_Status")
+input_df = pd.DataFrame([[Marital_Status]],columns =["Marital_Status]")
 Encoded_Marital_Status = LE.transform(input_df)
 Married_Status_value = Encoded_Marital_Status[0][0]
 
 Work_Type = st.selectbox("work_type", ['Private', 'Self-employed', 'Govt_job', 'children', 'Never_worked'])
-input_df = pd.DataFrame([[Work_Type]],columns ="Work_Type")
+input_df = pd.DataFrame([[Work_Type]],columns =["Work_Type"])
 Encoded_Work_Type = LE.transform(input_df)
 Work_Type_value = Encoded_Work_Type[0][0]
 
 Residence_type = st.selectbox("Residence_type", ['Urban', 'Rural'])
-input_df = pd.DataFrame([[Residence_type]],columns ="Residence_type")
+input_df = pd.DataFrame([[Residence_type]],columns =["Residence_type"])
 Encoded_Residence_type = LE.transform(input_df)
 Encoded_Residence_type_value = Encoded_Residence_type[0][0]
 
 
 smoking_status = st.selectbox("smoking_status", ['formerly smoked', 'never smoked', 'smokes', 'Unknown'])
-input_df = pd.DataFrame([[smoking_status]],columns ="smoking_status")
+input_df = pd.DataFrame([[smoking_status]],columns =["smoking_status"])
 Encoded_smoking_status = LE.transform(input_df)
 smoking_status_value = Encoded_smoking_status[0][0]
 
