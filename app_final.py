@@ -26,7 +26,7 @@ BMI_value = st.number_input("bmi",min_value=0,max_value=100,value=18)
 if st.button("Click to know the result"):
     
     cat_col = [gender, Marital_Status, Work_Type, Residence_type, smoking_status]
-    for cat_col in encoded_cat = LE.transform([cat_col])
+    encoded_cat = LE.transform([cat_col])
 
     num_col = [Age, Hypertension_status, Heart_Disease, Glucose_level, BMI_value]
     scaled_num = ss.transform([num_col])
