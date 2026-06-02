@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-LE = joblib.load("LE.joblib")
-ss = joblib.load("Scaling.joblib")
-model = joblib.load("model.joblib")
+
 
 
 
