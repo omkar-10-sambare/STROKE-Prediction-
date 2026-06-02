@@ -11,7 +11,7 @@ ss = joblib.load('Scaling.joblib')
 
 Gender = st.selectbox("gender", ["Male","Female"])
 input_df = pd.DataFrame({})
-input_df["Gender"]= Gender
+input_df["Gender"]= [Gender]
 input_df["Gender"] = LE.transform(input_df["Gender"])
 gender_value = input_df["Gender"][0]
 
