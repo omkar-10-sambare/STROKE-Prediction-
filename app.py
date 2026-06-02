@@ -7,7 +7,7 @@ Encoded_Gender = LE.transform(input_df)
 gender_value = Encoded_Gender[0][0]
 
 Marital_Status = st.selectbox("ever_married", ["Yes","No"])
-input_df = pd.DataFrame([[Marital_Status]],columns =["Marital_Status]")
+input_df = pd.DataFrame([[Marital_Status]],columns =["Marital_Status"])
 Encoded_Marital_Status = LE.transform(input_df)
 Married_Status_value = Encoded_Marital_Status[0][0]
 
