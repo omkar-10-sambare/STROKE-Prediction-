@@ -12,8 +12,8 @@ ss = joblib.load('Scaling.joblib')
 Gender = st.selectbox("gender", ["Male","Female"])
 input_df = pd.DataFrame({})
 input_df["Gender"]= Gender
-Encoded_Gender = LE.transform(input_df)
-gender_value = Encoded_Gender[0][0]
+Encoded_Gender = LE.transform(input_df["Gender"])
+gender_value = Encoded_Gender[0]
 
 Marital_Status = st.selectbox("ever_married", ["Yes","No"])
 input_df = pd.DataFrame({})
