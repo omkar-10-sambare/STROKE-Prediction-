@@ -2,7 +2,7 @@ import streamlit as st
 
 
 Gender = st.selectbox("gender", ["Male","Female"])
-input_df = pd.DataFrame([[Gender]],columns =["Gender"])
+input_df = pd.DataFrame([[Gender]],columns =["Gender1"])
 Encoded_Gender = LE.transform(input_df)
 gender_value = Encoded_Gender[0][0]
 
