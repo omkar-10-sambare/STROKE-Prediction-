@@ -33,30 +33,31 @@ input_df["smoking_status"]=smoking_status
 Encoded_smoking_status = LE.transform(input_df)
 smoking_status_value = Encoded_smoking_status[0][0]
 
-Age = st.number_input("age",[min_value=1,max_value=100,value=25])
+Age = st.number_input("age",min_value=1,max_value=100,value=25)
 input_array = np.array(Age).reshape(1,-1)
 scaled_age = ss.transform(input_array)
 scaled_age_value = scaled_age[0][0]
 
-Hypertension_status = st.slider("hypertension",[min_value=0,max_value=1,value=0])
+Hypertension_status = st.slider("hypertension",min_value=0,max_value=1,value=0)
 input_array = np.array(Hypertension_status).reshape(1,-1)
 scaled_hypertension = ss.transform(input_array)
 scaled_hypertension_value = scaled_hypertension[0][0]
 
-Heart_Disease = st.slider("heart_disease",[min_value=0,max_value=1,value=0])
+Heart_Disease = st.slider("heart_disease",min_value=0,max_value=1,value=0)
 input_array = np.array(Heart_Disease).reshape(1,-1)
 scaled_heart_disease = ss.transform(input_array)
 scaled_heart_disease_value = scaled_heart_disease[0][0]
 
-Glucose_level = st.number_input("avg_glucose_level",[min_value=56,max_value=270,value=70])
+Glucose_level = st.number_input("avg_glucose_level",min_value=56,max_value=270,value=70)
 input_array = np.array(Glucose_level).reshape(1,-1)
 scaled_glucose_level = ss.transform(input_array)
 scaled_glucose_level_value = scaled_glucose_level[0][0]
 
-BMI_value = st.number_input("bmi",[min_value=0,max_value=100,value=18])
+BMI_value = st.number_input("bmi",min_value=0,max_value=100,value=18)
 input_array = np.array(BMI_value).reshape(1,-1)
 scaled_bmi = ss.transform(input_array)
 scaled_bmi_value = scaled_bmi[0][0]
+
 
 
 
