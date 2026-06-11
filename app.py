@@ -7,7 +7,7 @@ model = joblib.load('model.joblib')
 encoders = joblib.load('encoders.joblib')
 ss = joblib.load('Scaling.joblib')
 
-
+st.title("STROKE ANALYSIS")
 
 gender = st.selectbox("gender", ["Male","Female"])
 Marital_Status = st.selectbox("ever_married", ["Yes","No"])
