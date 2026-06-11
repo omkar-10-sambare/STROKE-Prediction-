@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 model = joblib.load('model.joblib')
-LE = joblib.load('encoders.joblib')
+encoders = joblib.load('encoders.joblib')
 ss = joblib.load('Scaling.joblib')
 
 
