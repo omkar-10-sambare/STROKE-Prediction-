@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 model = joblib.load('model.joblib')
-LE = joblib.load('LE.joblib')
+LE = joblib.load('encoders.joblib')
 ss = joblib.load('Scaling.joblib')
 
 
@@ -24,19 +24,53 @@ BMI_value = st.number_input("bmi",min_value=0,max_value=100,value=18)
 
 if st.button("Click to know the result"):
     
-    cat_col = [gender, Marital_Status, Work_Type, Residence_type, smoking_status]
-    encoded_cat = LE.transform([cat_col])
+    gender_encoded = encoders['gender'].transform([gender])[0]
+    marital_encoded = encoders['ever_married'].transform(
+        [Marital_Status]
+    )[0]
 
-    num_col = [Age, Hypertension_status, Heart_Disease, Glucose_level, BMI_value]
-    scaled_num = ss.transform([num_col])
+    work_encoded = encoders['work_type'].transform(
+        [Work_Type]
+    )[0]
 
-    final_features = np.concatenate((scaled_num, encoded_cat), axis=1)
+    residence_encoded = encoders['Residence_type'].transform(
+        [Residence_type]
+    )[0]
 
+    smoking_encoded = encoders['smoking_status'].transform(
+        [smoking_status]
+    )[0]
+
+    
+    
+    num_col = [[
+        Age,
+        Hypertension_status,
+        Heart_Disease,
+        Glucose_level,
+        BMI_value
+    ]]
+
+    scaled_num = ss.transform(num_col)
+
+    categorical_features = np.array([[
+        gender_encoded,
+        marital_encoded,
+        work_encoded,
+        residence_encoded,
+        smoking_encoded
+    ]])
+
+    final_features = np.concatenate(
+        (scaled_num, categorical_features),
+        axis=1
+    )
+    
     prediction = model.predict(final_features)
     result = prediction[0]
 
     # Result
     if result == 1:
-        st.error("Student may have Depression")
+        st.error("The person may have a stroke.")
     else:
-        st.success("Student may not have Depression")
+        st.success("The person may not have a stroke.")
